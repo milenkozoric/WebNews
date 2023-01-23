@@ -1,0 +1,8 @@
+.nav-item:hover .nav-link {
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+.navbar-brand{
+    font-weight: bold;
+}

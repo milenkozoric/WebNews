@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5 mb-5">
+    <h2>Technology News:</h2>
+    <hr>
+    <div class="row">
+      <div class="col-lg-3 mt-3 mb-3" *ngFor="let item of technologys">
+        <div class="box">
+          <img [src]="item.urlToImage" width="100%" alt="" />
+          <p class="mt-1"> {{item.publishedAt | date: "dd.MM.yyyy"}}</p>
+          <h3 class="mt-2 mb-2">{{ item.title }}</h3>
+          <a href="{{ item.url }}" class="btn btn-dark btn-sm" target="_blank"
+            >Read more</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  
