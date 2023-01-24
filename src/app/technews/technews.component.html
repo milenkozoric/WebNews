@@ -2,7 +2,7 @@
     <h2>Technology News:</h2>
     <hr>
     <div class="row">
-      <div class="col-lg-3 mt-3 mb-3" *ngFor="let item of technologys">
+      <div class="col-lg-3 mt-3 mb-3" *ngFor="let item of products">
         <div class="box">
           <img [src]="item.urlToImage" width="100%" alt="" />
           <p class="mt-1"> {{item.publishedAt | date: "dd.MM.yyyy"}}</p>
@@ -13,5 +13,32 @@
         </div>
       </div>
     </div>
+    <hr>
+     <!----  Pagination  start-->
+  <div class="row mt-4">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="form-inline float-left mr-1">
+        <select
+          class="form-control"
+          [value]="newsPerPage"
+          (change)="changePageSize($event)"
+        >
+          <option value="4">4 Page Size</option>
+          <option value="8">8 Page Size</option>
+          <option value="12">12 Page Size</option>
+          <option value="16">16 Page Size</option>
+          <option value="20">20 Page Size</option>
+        </select>
+      </div>
+      <div class="btn-group float-right">
+          <button class="btn btn-outline-primary"
+           *ngFor="let page of pageNumbers" 
+           (click)="changePage(page)" [class.active]="page == selectedPage">{{page}} </button>
+          
+      </div>
+    </div>
   </div>
+</div>
+
+
   
